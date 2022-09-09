@@ -5,6 +5,14 @@ function Book(title, author, isbn){
   this.isbn = isbn;
 }
 
+// // // Change background color
+// const body = document.body;
+// body.style.backgroundColor = "antiquewhite"
+
+// const subHeader = document.getElementsByClassName(".subHeader")
+// subHeader.style
+
+
 //UI Construtor
 function UI(){}
 
@@ -22,7 +30,7 @@ UI.prototype.addBookToList = function(book){
     <td>${book.isbn}</td>
     <td><a href='#' class='delete'>X</a></td>
   `;
-
+  // this line of code takes the list of books and appends them into the row
   list.appendChild(row);
 };
 
@@ -44,7 +52,7 @@ UI.prototype.showAlert = function(message, className){
   //Time out after 3 section
   setTimeout(function(){
     document.querySelector('.alert').remove();
-  }, 3000);
+  }, 2000);
 }
 
 UI.prototype.clearfields = function(){
@@ -59,12 +67,6 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   const title = document.getElementById('title').value
   const author = document.getElementById('author').value
   const isbn = document.getElementById('isbn').value
-
-  
-
-
-
-
 
   //instantiate new object from Book constructor
   const book = new Book(title, author, isbn);
